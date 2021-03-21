@@ -4,8 +4,6 @@ on:
  branches: [ master ]
  pull_request:
  branches: [ master ]
-ENSE701 Assessment 1A
-S1 2021 Pg 5 of 6 copyright Jim Buchan
 jobs:
  build:
  runs-on: ubuntu-latest
