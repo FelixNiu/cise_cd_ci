@@ -1,0 +1,27 @@
+name: CI/CD
+on:
+ push:
+ branches: [ master ]
+ pull_request:
+ branches: [ master ]
+ENSE701 Assessment 1A
+S1 2021 Pg 5 of 6 copyright Jim Buchan
+jobs:
+ build:
+ runs-on: ubuntu-latest
+ strategy:
+ matrix:
+ node-version: [12.x]
+ steps:
+ - name: Checkout repository
+ uses: actions/checkout@v2
+ - name: Set up Node.js ${{ matrix.node-version }}
+ uses: actions/setup-node@v1
+ with:
+ node-version: ${{ matrix.node-version }}
+ - name: Install dependencies
+ run: npm install
+ - name: Run the tests
+ run: npm test
+ - name: Build
+ run: npm run build
