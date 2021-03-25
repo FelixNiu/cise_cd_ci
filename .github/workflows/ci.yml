@@ -7,32 +7,12 @@ on:
     branches: [ main ]
 
 jobs:
-<<<<<<< HEAD
- build:
- runs-on: ubuntu-latest
- strategy:
- matrix:
- node-version: [14.x]
- steps:
- - name: Checkout repository
- uses: actions/checkout@v2
- - name: Set up Node.js ${{ matrix.node-version }}
- uses: actions/setup-node@v1
- with:
- node-version: ${{ matrix.node-version }}
- - name: Install dependencies
- run: npm install
- - name: Run the tests
- run: npm test
- - name: Build
- run: npm run build
-=======
   build:
     runs-on: ubuntu-latest
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [14.x]
 
     steps:
       - name: Checkout repository
@@ -51,7 +31,3 @@ jobs:
 
       - name: Build
         run: npm run build
-
-      - name: Run linter
-        run: npm run lint
->>>>>>> 24b5c502940404622a4a37335758832283ce43cb
