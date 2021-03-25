@@ -1,6 +1,8 @@
 name: CI/CD
 
 on:
+  push:
+    branches: [main]
   pull_request:
     branches: [ main ]
 
@@ -29,3 +31,6 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Run linter
+        run: npm run lint
